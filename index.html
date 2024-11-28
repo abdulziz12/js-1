@@ -1,0 +1,260 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shikoyatlar</title>
+    <style>
+        *{
+
+        margin:0px;
+        padding: 0px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      .data {
+        display: flex;
+        flex-direction: column;
+        width: 00px;
+        margin: 0 auto;
+        gap: 10px;
+      }
+      nav{
+        background-color: orange;
+        padding: 15px ;
+        color: white;
+        margin-bottom: 5rem;
+        width: 1489px;
+        margin-top: -20px;
+      }
+      h1 {
+        text-align: center;
+      }
+      .container{
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      a{
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+      }
+      ul, li{
+        list-style: none;
+        
+      }
+
+      ul{
+        display: flex;
+        gap: 50px;
+        align-items: center;
+      }
+      input, textarea{
+        border: 1px solid orange;
+        padding: 10px;
+        outline: none;
+      }
+      .button{
+        padding: 10px;
+        background-color: rgb(255, 0, 0);
+        transition: 0.3s ease-in-out all;
+        border: none;
+        color: aliceblue;
+        text-align: center;
+        height: 40px;
+        font-size: 18px;
+        width: 330px;
+        border-radius: 5px;
+      }
+      button:hover{
+        background-color: orange;
+        color: white;
+        cursor: pointer;
+      }
+        input{
+            width: 290px;
+            height: 30px;
+            padding:7px 20px ;
+            font-size: 16px;
+            border-radius: 5px;
+            outline: none;
+            border: 1px rgb(158, 158, 158) solid;
+            margin-bottom:10px ;
+        }
+        .div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        textarea{
+            width: 310px;
+            height: 100px;
+            font-size: 16px;
+            border-radius: 5px;
+            outline: none;
+            border: 1px rgb(158, 158, 158) solid;
+            margin-bottom:10px ;
+
+        }
+        button{
+            width: 290px;
+            height: 30px;
+        }
+    
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            transition: background-color 0.9s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .header {
+           
+            padding: 10px;
+            text-align: center;
+          
+        }
+        .header a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .shikoyat{
+            margin-right: 30px;
+        }
+        .watch-h1{
+            margin-top: 40px;
+            color:aquamarine;
+            margin-bottom: 30px;
+        }
+        .h2{
+            color: rgb(0, 255, 255);
+            margin-bottom: 30px;
+        }
+        .colorSelector{
+        width: 310px;
+        height: 30px;
+background-color: beige;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+      <div class="container">
+        <div class="wrapper">
+          <h1 class="shikoyat">Shikoyat.com</h1>
+          <ul>
+            <li>
+              <a href="">Biz bilan bog'laning</a>
+            
+            </li>
+            <li>
+             
+              <a href="">Biz haqimizda</a>
+           
+            </li>
+            <li>
+                <a href="./ikki.html">Shikoyatlar sahifasi</a>
+            </li>
+            <li>
+              <h3 class="soat"><div class="watch"></div></h3>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="header">
+        <h1 class="h2">Sizning Shikoyatlaringiz</h1>
+    </div>
+    <div class="container">
+        <input type="text" id="input1" placeholder="shikoyat kirit">
+        <input type="text" id="input2" placeholder="shikoyat kirit">
+        <input type="text" id="input3" placeholder="shikoyat kirit">
+        <textarea id="textarea1" placeholder="shikoyatlarin  yoz "></textarea>
+        <button class="button" onclick="saveComplaint()">Qo'shish</button>
+    </div>
+<h1 class="watch"></h1>
+    <h1 class="watch-h1">Saytning fon rangini tanlang:</h1>
+
+<select class="colorSelector" id="colorSelector" onchange="changeBackgroundColor()">
+    <option value="white">Oq</option>
+    <option value="gray">kulrang</option>
+    <option value="blue">ko'k</option>
+    <option value="green">yashil</option>
+    <option value="yellow">sariq</option>
+    <option value="lightcoral">Yorqin qizg'ish</option>
+    <option value="lightpink">Yorqin pushti</option>
+    <option value="red">qizil</option>
+
+</select>
+
+<script>
+    function changeBackgroundColor() {
+        let selectedColor = document.getElementById("colorSelector").value;
+        document.body.style.backgroundColor = selectedColor;
+    }
+
+    let watch = document.querySelector(".watch")
+        setInterval(abdulaziz,1000)
+        function abdulaziz() {
+            let sana = new Date()
+            watch.innerHTML= sana.getHours() + ":" + sana.getMinutes() + ":" + sana.getSeconds()}
+</script>
+
+    <script>
+        function saveComplaint() {
+        let input1 = document.getElementById('input1').value.trim();
+        let input2 = document.getElementById('input2').value.trim();
+        let input3 = document.getElementById('input3').value.trim();
+        let textarea1 = document.getElementById('textarea1').value.trim();
+       
+            if (input1 || input2 || input3 || textarea1) {
+                let complaint = {
+                    input1: input1,
+                    input2: input2,
+                    input3: input3,
+                    textarea1: textarea1
+                };
+                let complaints = JSON.parse(localStorage.getItem('complaints')) || [];  
+                complaints.push(complaint)
+                localStorage.setItem('complaints', JSON.stringify(complaints))
+            }
+        }
+        
+        container.addEventListener("click", function (e){
+    if(e.target.tagName == "LI"){
+        e.target.classList.toggle("check")
+    }else if(e.target.tagName == "SPAN"){
+        e.target.parentElement.remove()
+    }
+})
+
+container.addEventListener("click" ,function () {
+    let li = document.createElement("li")
+    let span = document.createElement("span")
+    span.innerHTML = "\u00d7";
+    li.innerHTML = input.value;
+    li.appendChild(span)
+    ul.appendChild(li)
+})
+
+    </script>
+</body>
+</html>
